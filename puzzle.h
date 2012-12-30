@@ -4,21 +4,20 @@
 #include "configuration.h"
 
 
-
-
 using namespace std;
 
 
 class Puzzle {
 
     private:
+    Configuration *config
 
     public:
-        puzzle();
+        puzzle(Configuration *c);
 
-        configuration *solve(configuration *c);
+        Configuration *solve(Configuration *c);
 
-        virtual vector<configuration*> successors(configuraton *c) = 0;
+        virtual vector<Configuration*> successors(Configuraton *c) = 0;
 
         
         

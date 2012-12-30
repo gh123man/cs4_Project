@@ -2,6 +2,7 @@
 #define CONFIG_H
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -11,13 +12,15 @@ class Configuration {
     private:
 
     public:
-        configuration();
+        Configuration();
         
         virtual bool final() = 0;
         
         virtual bool empty() = 0;
         
-        virtual String toString() = 0;
+        virtual void print() = 0;
+        
+        virtual void setGoal(Configuration *c) = 0;
 
 }
 

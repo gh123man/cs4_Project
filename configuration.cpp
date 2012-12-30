@@ -1,5 +1,5 @@
 
 #include "configuration.h"
 
-configuration::configuration() {
+Configuration::Configuration() {
 }

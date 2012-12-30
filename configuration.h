@@ -1,4 +1,3 @@
-
 #ifndef CONFIG_H
 #define CONFIG_H
 
@@ -10,15 +9,17 @@ using namespace std;
 class Configuration {
 
     private:
-        template <class data>;
 
     public:
         configuration();
-
+        
+        virtual bool final() = 0;
+        
+        virtual bool empty() = 0;
+        
+        virtual String toString() = 0;
 
 }
-
-
 
 #endif
 

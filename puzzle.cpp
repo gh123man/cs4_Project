@@ -2,18 +2,8 @@
 
 #include "puzzle.h"
 
-puzzle::puzzle() {
-
+puzzle::puzzle(configuraton *c): config(c) {
 }
-
-
-
-
-
-
-
-
-
 
 
 configuraton *puzzle::solve(configuration *c) {
@@ -22,7 +12,7 @@ configuraton *puzzle::solve(configuration *c) {
     q.push(c);
     configuration *cfg;
 
-    while (!q.empty() && !q.front()->isFinal()) {
+    while (!q.empty() && !q.front()->final()) {
     
         cfg = q.front();
         q.pop();

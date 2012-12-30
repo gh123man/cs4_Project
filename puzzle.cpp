@@ -1,6 +1,47 @@
 
 
+#include "puzzle.h"
 
+puzzle::puzzle() {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+configuraton *puzzle::solve(configuration *c) {
+
+    queue<configuration*> q;
+    q.push(c);
+    configuration *cfg;
+
+    while (!q.empty() && !q.front()->isFinal()) {
+    
+        cfg = q.front();
+        q.pop();
+        vector<configuration*> configs = successors(cfg);
+        
+        for (int i = 0; i < configs.size(); i++) {
+            q.push(configs[i]);
+            //check memo here
+        }
+    }
+    
+    if (q.empty()) {
+        cout << "No soluton to this problem" << endl;
+        exit(1);
+    } else {
+        return q.front();
+    }
+
+}
 
 
 /*

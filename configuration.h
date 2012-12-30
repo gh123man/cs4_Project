@@ -10,9 +10,10 @@ using namespace std;
 class Configuration {
 
     private:
-
+        template <class data>;
 
     public:
+        configuration();
 
 
 }

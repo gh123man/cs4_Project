@@ -1,6 +1,6 @@
 #include "clockConfig.h"
 
-ClockConfig::ClockConfig(int t = 12): time(t) {
+ClockConfig::ClockConfig(Configuration *c, int t = 12): Configuration(c), time(t) {
 }
 
 bool ClockConfig::validTime(int t) {

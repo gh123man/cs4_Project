@@ -12,7 +12,7 @@ class ClockConfig: public Configuration {
         int goal;
     
     public:
-        ClockConfig(int t);
+        ClockConfig(Configuration *c, int t);
         
         void plsHr();
         void mnsHr();

@@ -10,12 +10,19 @@ using namespace std;
 class Configuration {
 
 
+    private:
+        Configuration *parent;
+
     public:
-        Configuration();
+        Configuration(Configuration *c);
+        
+        Configuration *getParent();
         
         virtual bool final() = 0;
         
         virtual void print() = 0;
+        
+        
         
 };
 

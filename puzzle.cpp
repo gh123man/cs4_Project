@@ -25,34 +25,24 @@ Configuration *Puzzle::solve(Configuration *c) {
 
 }
 
-void Puzzle::trace(int pos, Configuration *c) {
 
-    if (log.size()-1 < pos || log.size() == 0) {
-        vector<Configuration*> v;
-        v.push_back(c);
-        log.push_back(v);
-        log.at(pos).push_back(c);
-    } else {
-        log.at(pos).push_back(c);
+void Puzzle::printTrace(Configuration *c) {
+    
+    vector<Configuration*> trace;
+    trace.push_back(c);
+
+    while(c != NULL) {
+    
+        trace.push_back(c->getParent());
+        c = c->getParent();
+        
     }
     
-}
-
-void Puzzle::printPath() {
-
-    int hold = 0;
-    for (int i = 0; i < log.size(); i++) {
-        if (log[i].size() < log[hold].size()) {
-            hold = i;
-            
-        }
-    }
+    for (int i = trace.size()-1; i > 0; i--) {
+        trace[i-1]->print();
     
-    for (int i = 0; i < log[hold].size(); i++) {
-        log[hold][i]->print();
     }
 }
-
 
 
 

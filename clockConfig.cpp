@@ -1,10 +1,10 @@
 #include "clockConfig.h"
 
-ClockConfig::ClockConfig(Configuration *c, int t = 12): Configuration(c), time(t) {
+ClockConfig::ClockConfig(Configuration *c, int hrs, int t, int g): Configuration(c), hours(hrs), time(t), goal(g) {
 }
 
 bool ClockConfig::validTime(int t) {
-    if (t < 13 && t > 0) {
+    if (t <= hours && t > 0) {
         return true;
     } else {
         return false;    
@@ -25,7 +25,7 @@ void ClockConfig::mnsHr() {
         time--;
         
     } else {
-        time = 12;
+        time = hours;
     }
 } 
 
@@ -49,15 +49,13 @@ bool ClockConfig::final(){
 
 }
 
+int ClockConfig::getHours() {
+    return hours;
+}
+
 int ClockConfig::getGoal() {
     return goal;
 }
-
-void ClockConfig::setGoal(int g) {
-
-    goal = g;
-}
-
 
 
 

@@ -10,7 +10,6 @@ Configuration *Puzzle::solve(Configuration *c) {
     vector<Configuration*> configs;
     q.push(c);
     Configuration *cfg;
-
     while (!q.empty() && !q.front()->final()) {
     
         cfg = q.front();
@@ -18,6 +17,7 @@ Configuration *Puzzle::solve(Configuration *c) {
         configs = successors(cfg);
         
         for(int i = 0; i < configs.size(); i++) {
+            
             if (configs[i]->final()) {
                 return configs[i];
             } else {

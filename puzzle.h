@@ -13,7 +13,6 @@ using namespace std;
 
 class Puzzle {
 
-    private:
         
     public:
 
@@ -22,7 +21,6 @@ class Puzzle {
         void printTrace(Configuration *c);
         
         virtual  vector<Configuration*> successors(Configuration *c) = 0;
-        
         
 
 };

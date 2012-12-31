@@ -8,11 +8,12 @@ using namespace std;
 class ClockConfig: public Configuration {
 
     private:
+        int hours;
         int time;
         int goal;
     
     public:
-        ClockConfig(Configuration *c, int t);
+        ClockConfig(Configuration *c, int hrs, int t, int g);
         
         void plsHr();
         void mnsHr();
@@ -21,10 +22,9 @@ class ClockConfig: public Configuration {
         
         bool final();
         
-        void setGoal(int g);
-        
         int getTime();
         
+        int getHours();
         int getGoal();
     
 

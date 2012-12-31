@@ -1,38 +1,48 @@
 
 
 #include "clock.h"
-#include <vector>
 
-Clock::Clock(ClockConfig *cc): puzzle(cc) {
+
+
+
+
+void Clock::successors(Configuration *c, queue<Configuration*> &q) {
+
+    
+    ClockConfig *cc;
+    cc = dynamic_cast<ClockConfig*>(c);
+    
+    
+    ClockConfig temp1(cc->getTime());
+    temp1.setGoal(cc->getGoal());
+    temp1.plsHr();
+    Configuration *a = &temp1; 
+    q.push(a);
+    a->print();
+    
+    
+    ClockConfig temp2(cc->getTime());
+    temp2.setGoal(cc->getGoal());
+    temp2.mnsHr();
+    Configuration *b = &temp2; 
+    q.push(b);
+    b->print();
+    q.front()->print();
+    
+    
+
 }
 
-vector<Configuration*> Clock::successors(Configuraton *c) {
 
-    vector<Configuration*> configs;
-    
-    Configuration *a = new ClockConfig();
-    a->plsHr();
-    configs.push(a);
-    
-    Configuration *b = new ClockConfig();
-    b->mnsHr();
-    configs.push(b);
-    
-    return configs;
-
-}
-
-
-void main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
+    ClockConfig temp(1);
+    temp.setGoal(2);
+    Configuration *cc = &temp;
     
     
+    Clock *clockPuzzle = new Clock();
     
-    clockConfig cc = new ClockConfig(12);
-    cc->setGoal(new ClockConfig(3));
-    
-    Clock clockPuzzle = new Clock(cc);
-    
-    solve(cc)->print();
+    clockPuzzle->solve(cc);
 
 
 }

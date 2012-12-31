@@ -1,16 +1,18 @@
-#include "puzzle.h"
-#include "puzzleConfig.h"
+#ifndef CLOCK_H
+#define CLOCK_H
 
+#include "puzzle.h"
+#include "clockConfig.h"
+#include <queue>
 
 using namespace std;
 
 class Clock: public Puzzle {
 
-    private:
     
     public:
-    
-        vector<Configuration*> successors(Configuraton *c);
+        void successors(Configuration *c, queue<Configuration*> &q);
     
 
-}
+};
+#endif

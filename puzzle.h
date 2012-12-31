@@ -1,6 +1,10 @@
+
+#ifndef PUZZLE_H
+#define PUZZLE_H
+
 #include <iostream>
-#include <queue>;
-#include <vector>;
+#include <queue>
+#include <vector>
 #include "configuration.h"
 
 
@@ -10,17 +14,17 @@ using namespace std;
 class Puzzle {
 
     private:
-    Configuration *config
 
     public:
-        puzzle(Configuration *c);
 
         Configuration *solve(Configuration *c);
 
-        virtual vector<Configuration*> successors(Configuraton *c) = 0;
+        virtual void successors(Configuration *c, queue<Configuration*> &q) = 0;
 
         
         
 
 
-}
+};
+
+#endif

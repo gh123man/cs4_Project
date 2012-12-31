@@ -1,12 +1,10 @@
 
-
+#include <stdio.h>
+#include <stdlib.h>
 #include "puzzle.h"
 
-puzzle::puzzle(Configuraton *c): config(c) {
-}
 
-
-configuraton *puzzle::solve(Configuration *c) {
+Configuration *Puzzle::solve(Configuration *c) {
 
     queue<Configuration*> q;
     q.push(c);
@@ -15,13 +13,16 @@ configuraton *puzzle::solve(Configuration *c) {
     while (!q.empty() && !q.front()->final()) {
     
         cfg = q.front();
-        q.pop();
-        vector<Configuration*> configs = successors(cfg);
+        cout << "here" << endl;
+        cfg->print();
         
-        for (int i = 0; i < configs.size(); i++) {
-            q.push(configs[i]);
-            //check memo here
-        }
+        q.pop();
+        
+        successors(cfg, q);
+        q.front()->print();
+        
+        cout << "here" << endl;
+        
     }
     
     if (q.empty()) {
@@ -51,4 +52,4 @@ Create an initially empty queue of configurations.
     The acceptable configuration is now at the head of the queue;
     but if the queue is empty, there is no solution to the problem.
 
-*
+*/

@@ -1,5 +1,7 @@
-#include "puzzleConfig.h"
+#ifndef CLKCONFIG_H
+#define CLKCONFIG_H
 
+#include "configuration.h"
 
 using namespace std;
 
@@ -7,11 +9,12 @@ class ClockConfig: public Configuration {
 
     private:
         int time;
-        ClockConfig *final;
+        int goal;
     
     public:
-    
-        void plusHr();
+        ClockConfig(int t);
+        
+        void plsHr();
         void mnsHr();
         bool validTime(int t);
         void print();
@@ -20,9 +23,13 @@ class ClockConfig: public Configuration {
         
         bool empty();
         
-        void setGoal(ClockConfig *c);
+        void setGoal(int g);
         
         int getTime();
+        
+        int getGoal();
     
 
-}
+};
+#endif
+

@@ -7,13 +7,14 @@ bool ClockConfig::validTime(int t) {
     if (t < 13 && t > 0) {
         return true;
     } else {
-        reutrn false;    
+        return false;    
     }
 }
 
-void ClockConfig::plusHr() {
+void ClockConfig::plsHr() {
     if (validTime(time + 1)) {
         time++;
+        
     } else {
         time = 1;
     }
@@ -22,6 +23,7 @@ void ClockConfig::plusHr() {
 void ClockConfig::mnsHr() {
     if (validTime(time - 1)) {
         time--;
+        
     } else {
         time = 12;
     }
@@ -33,13 +35,13 @@ void ClockConfig::print() {
 
 }
 
-void ClockConfig::getTime() {
+int ClockConfig::getTime() {
     return time;
 }
 
 bool ClockConfig::final(){
 
-    if (final->getTime() == time) {
+    if (goal == time) {
         return true;
     } else {
         return false;
@@ -47,6 +49,27 @@ bool ClockConfig::final(){
 
 }
 
-void ClockConfig::setGoal(ClockConfig *c) {
-    final = ClockConfig;
+bool ClockConfig::empty() {
+    return false;
 }
+
+int ClockConfig::getGoal() {
+    return goal;
+}
+
+void ClockConfig::setGoal(int g) {
+
+    goal = g;
+}
+
+
+
+
+
+
+
+
+
+
+
+

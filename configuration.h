@@ -9,7 +9,6 @@ using namespace std;
 
 class Configuration {
 
-    private:
 
     public:
         Configuration();
@@ -20,9 +19,7 @@ class Configuration {
         
         virtual void print() = 0;
         
-        virtual void setGoal(Configuration *c) = 0;
-
-}
+};
 
 #endif
 

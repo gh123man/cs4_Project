@@ -21,7 +21,7 @@ class Puzzle {
 
         void printTrace(Configuration *c);
         
-        virtual void successors(Configuration *c, queue<Configuration*> &q) = 0;
+        virtual  vector<Configuration*> successors(Configuration *c) = 0;
         
         
 

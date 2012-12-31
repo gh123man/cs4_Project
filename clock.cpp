@@ -6,8 +6,9 @@
 
 
 
-void Clock::successors(Configuration *c, queue<Configuration*> &q) {
-
+vector<Configuration*> Clock::successors(Configuration *c) {
+    
+    vector<Configuration*> configs;
     
     ClockConfig *cc;
     cc = dynamic_cast<ClockConfig*>(c);
@@ -19,7 +20,7 @@ void Clock::successors(Configuration *c, queue<Configuration*> &q) {
     a->setGoal(cc->getGoal());
     a->plsHr();
     
-    q.push(a);
+    configs.push_back(a);
     
     
     Configuration *temp2 = new ClockConfig(c, cc->getTime());
@@ -28,15 +29,17 @@ void Clock::successors(Configuration *c, queue<Configuration*> &q) {
     b->setGoal(cc->getGoal());
     b->mnsHr();
     
-    q.push(b);
+    configs.push_back(b);
+    
+    return configs;
     
 
 }
 
 
 int main(int argc, char *argv[]) {
-    ClockConfig temp(NULL, 1);
-    temp.setGoal(11);
+    ClockConfig temp(NULL, 12);
+    temp.setGoal(6);
     Configuration *cc = &temp;
     
     

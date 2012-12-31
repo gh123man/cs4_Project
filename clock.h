@@ -11,7 +11,7 @@ class Clock: public Puzzle {
 
     
     public:
-        void successors(Configuration *c, queue<Configuration*> &q);
+        vector<Configuration*> successors(Configuration *c);
     
 
 };

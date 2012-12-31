@@ -7,13 +7,23 @@
 Configuration *Puzzle::solve(Configuration *c) {
 
     queue<Configuration*> q;
+    vector<Configuration*> configs;
     q.push(c);
     Configuration *cfg;
 
     while (!q.empty() && !q.front()->final()) {
+    
         cfg = q.front();
         q.pop();
-        successors(cfg, q);
+        configs = successors(cfg);
+        
+        for(int i = 0; i < configs.size(); i++) {
+            if (configs[i]->final()) {
+                return configs[i];
+            } else {
+                q.push(configs[i]);
+            }
+        }
     }
     
     if (q.empty()) {

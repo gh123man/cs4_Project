@@ -49,10 +49,6 @@ bool ClockConfig::final(){
 
 }
 
-bool ClockConfig::empty() {
-    return false;
-}
-
 int ClockConfig::getGoal() {
     return goal;
 }

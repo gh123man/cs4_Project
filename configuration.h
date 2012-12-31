@@ -15,8 +15,6 @@ class Configuration {
         
         virtual bool final() = 0;
         
-        virtual bool empty() = 0;
-        
         virtual void print() = 0;
         
 };

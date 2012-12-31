@@ -13,15 +13,8 @@ Configuration *Puzzle::solve(Configuration *c) {
     while (!q.empty() && !q.front()->final()) {
     
         cfg = q.front();
-        cout << "here" << endl;
-        cfg->print();
-        
         q.pop();
-        
         successors(cfg, q);
-        q.front()->print();
-        
-        cout << "here" << endl;
         
     }
     

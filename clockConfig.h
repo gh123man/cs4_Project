@@ -21,8 +21,6 @@ class ClockConfig: public Configuration {
         
         bool final();
         
-        bool empty();
-        
         void setGoal(int g);
         
         int getTime();

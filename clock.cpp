@@ -13,21 +13,22 @@ void Clock::successors(Configuration *c, queue<Configuration*> &q) {
     cc = dynamic_cast<ClockConfig*>(c);
     
     
-    ClockConfig temp1(cc->getTime());
-    temp1.setGoal(cc->getGoal());
-    temp1.plsHr();
-    Configuration *a = &temp1; 
+    Configuration *temp1 = new ClockConfig(cc->getTime());
+    ClockConfig *a = dynamic_cast<ClockConfig*>(temp1);
+    
+    a->setGoal(cc->getGoal());
+    a->plsHr();
+    
     q.push(a);
-    a->print();
     
     
-    ClockConfig temp2(cc->getTime());
-    temp2.setGoal(cc->getGoal());
-    temp2.mnsHr();
-    Configuration *b = &temp2; 
+    Configuration *temp2 = new ClockConfig(cc->getTime());
+    ClockConfig *b = dynamic_cast<ClockConfig*>(temp2);
+    
+    b->setGoal(cc->getGoal());
+    b->mnsHr();
+    
     q.push(b);
-    b->print();
-    q.front()->print();
     
     
 
@@ -36,13 +37,13 @@ void Clock::successors(Configuration *c, queue<Configuration*> &q) {
 
 int main(int argc, char *argv[]) {
     ClockConfig temp(1);
-    temp.setGoal(2);
+    temp.setGoal(5);
     Configuration *cc = &temp;
     
     
     Clock *clockPuzzle = new Clock();
     
-    clockPuzzle->solve(cc);
+    clockPuzzle->solve(cc)->print();
 
 
 }

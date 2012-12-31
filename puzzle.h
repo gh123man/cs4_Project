@@ -14,12 +14,17 @@ using namespace std;
 class Puzzle {
 
     private:
-
+        vector< vector<Configuration*> > log;
+        
     public:
 
         Configuration *solve(Configuration *c);
 
         virtual void successors(Configuration *c, queue<Configuration*> &q) = 0;
+        
+        void trace(int pos, Configuration *c);
+        
+        void printPath();
 
         
         

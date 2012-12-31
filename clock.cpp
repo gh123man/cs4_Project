@@ -20,6 +20,7 @@ void Clock::successors(Configuration *c, queue<Configuration*> &q) {
     a->plsHr();
     
     q.push(a);
+    trace(0, a);
     
     
     Configuration *temp2 = new ClockConfig(cc->getTime());
@@ -29,7 +30,7 @@ void Clock::successors(Configuration *c, queue<Configuration*> &q) {
     b->mnsHr();
     
     q.push(b);
-    
+    trace(1, b);
     
 
 }
@@ -44,6 +45,7 @@ int main(int argc, char *argv[]) {
     Clock *clockPuzzle = new Clock();
     
     clockPuzzle->solve(cc)->print();
+    clockPuzzle->printPath();
 
 
 }

@@ -11,11 +11,9 @@ Configuration *Puzzle::solve(Configuration *c) {
     Configuration *cfg;
 
     while (!q.empty() && !q.front()->final()) {
-    
         cfg = q.front();
         q.pop();
         successors(cfg, q);
-        
     }
     
     if (q.empty()) {
@@ -27,22 +25,34 @@ Configuration *Puzzle::solve(Configuration *c) {
 
 }
 
+void Puzzle::trace(int pos, Configuration *c) {
 
-/*
+    if (log.size()-1 < pos || log.size() == 0) {
+        vector<Configuration*> v;
+        v.push_back(c);
+        log.push_back(v);
+        log.at(pos).push_back(c);
+    } else {
+        log.at(pos).push_back(c);
+    }
+    
+}
 
-Create an initially empty queue of configurations.
-    Insert the initial configuration into the queue.
-    While
-      the queue is not empty and
-      the first configuration in the queue does not meet the goal,
-    loop:
-        Remove the first configuration from the queue and call it cfg.
-        For each move applicable to cfg, loop:
-            Make the move and enqueue the resulting
-            configuration if it has not already been seen.
-        end-loop.
-    end-loop.
-    The acceptable configuration is now at the head of the queue;
-    but if the queue is empty, there is no solution to the problem.
+void Puzzle::printPath() {
 
-*/
+    int hold = 0;
+    for (int i = 0; i < log.size(); i++) {
+        if (log[i].size() < log[hold].size()) {
+            hold = i;
+            
+        }
+    }
+    
+    for (int i = 0; i < log[hold].size(); i++) {
+        log[hold][i]->print();
+    }
+}
+
+
+
+

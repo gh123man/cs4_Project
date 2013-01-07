@@ -1,5 +1,5 @@
 #
-# Created by gmakemake (Ubuntu Sep  7 2011) on Sun Dec 30 17:15:15 2012
+# Created by gmakemake (Ubuntu Sep  7 2011) on Mon Jan  7 18:26:48 2013
 #
 
 #
@@ -49,14 +49,14 @@ CCLIBFLAGS =
 ########## End of default flags
 
 
-CPP_FILES =	clock.cpp clockConfig.cpp configuration.cpp puzzle.cpp
+CPP_FILES =	ClockConfig.cpp ClockPuzzle.cpp Configuration.cpp Puzzle.cpp clock.cpp
 C_FILES =	
 PS_FILES =	
 S_FILES =	
-H_FILES =	clock.h clockConfig.h configuration.h puzzle.h
+H_FILES =	ClockConfig.h ClockPuzzle.h Configuration.h Puzzle.h
 SOURCEFILES =	$(H_FILES) $(CPP_FILES) $(C_FILES) $(S_FILES)
 .PRECIOUS:	$(SOURCEFILES)
-OBJFILES =	clockConfig.o configuration.o puzzle.o 
+OBJFILES =	ClockConfig.o ClockPuzzle.o Configuration.o Puzzle.o 
 
 #
 # Main targets
@@ -71,10 +71,11 @@ clock:	clock.o $(OBJFILES)
 # Dependencies
 #
 
-clock.o:	clock.h clockConfig.h configuration.h puzzle.h
-clockConfig.o:	clockConfig.h configuration.h
-configuration.o:	configuration.h
-puzzle.o:	configuration.h puzzle.h
+ClockConfig.o:	ClockConfig.h Configuration.h
+ClockPuzzle.o:	ClockConfig.h ClockPuzzle.h Configuration.h Puzzle.h
+Configuration.o:	Configuration.h
+Puzzle.o:	Configuration.h Puzzle.h
+clock.o:	ClockConfig.h ClockPuzzle.h Configuration.h Puzzle.h
 
 #
 # Housekeeping

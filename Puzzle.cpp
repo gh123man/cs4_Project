@@ -48,7 +48,11 @@ void Puzzle::printTrace(Configuration *c) {
         
     }
     
+    int j = 0;
+    
     for (int i = trace.size()-1; i > 0; i--) {
+        j++;
+        cout << "step " << j << ": " << flush;
         trace[i-1]->print();
     
     }

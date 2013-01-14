@@ -1,0 +1,105 @@
+cs4 project
+Brian Floersch
+
+I chose inheritance through polymorphism to complete 
+this project by implementing a configuration class and 
+a puzzle class.
+
+the configuration class has 2 virtual methods needed 
+for the solving algorithm which are finish (returns 
+bool if the goal is met) and print (to print the 
+configuration to standard output)
+
+the puzzle class contains the solver and the path 
+trace algorithms. 
+
+I trace the shortest path by giving each configuration 
+a pointer to its parent, with the head being null. when 
+the goal is reached it traces up through and records 
+parent pointers until the null parent is met. it then prints 
+the objects in reverse order to show the shortest path 
+taken. 
+
+I did not use RCS for this project. my project is with git, 
+below is a copy of “git status” 
+to show progress and revision control. 
+
+
+
+commit 66e5e2205691375fb0d1ab1b0e9569aac05f0cf6
+Author: BRIAN PATRICK FLOERSCH <bpf4935@hendrix.cs.rit.edu>
+Date:   Wed Jan 9 19:28:57 2013 -0500
+
+    added comments
+
+commit f5ccd846a9521d44db3e00b8c835d7f63f922fc4
+Author: BRIAN PATRICK FLOERSCH <bpf4935@hendrix.cs.rit.edu>
+Date:   Mon Jan 7 18:28:16 2013 -0500
+
+    remove bin files...
+
+commit ff043f18067a3d7f49e7e98222a22f82ed675cc6
+Author: BRIAN PATRICK FLOERSCH <bpf4935@hendrix.cs.rit.edu>
+Date:   Mon Jan 7 18:27:47 2013 -0500
+
+    filenames fixed to cs4 standards
+
+commit cd376dcb2bd4f985e6299c2d4a2fe9d9bd832224
+Author: BRIAN PATRICK FLOERSCH <bpf4935@hendrix.cs.rit.edu>
+Date:   Mon Dec 31 15:10:45 2012 -0500
+
+    finished main. needs memoization
+
+commit de41bf3b0e7d3e903439da9cb471bdeda3dd1f07
+Author: BRIAN PATRICK FLOERSCH <bpf4935@hendrix.cs.rit.edu>
+Date:   Mon Dec 31 14:19:50 2012 -0500
+
+    small performace tweek, moved back to for-loop into queue
+
+commit e6452ee9f38bd1dd91479640753050af07395e7c
+Author: BRIAN PATRICK FLOERSCH <bpf4935@hendrix.cs.rit.edu>
+Date:   Mon Dec 31 13:40:03 2012 -0500
+
+    added trace back, fully working. memoization next.
+
+commit 2537cce3565ccf74c48d71a5caead7fce7f39f58
+Author: BRIAN PATRICK FLOERSCH <bpf4935@hendrix.cs.rit.edu>
+Date:   Sun Dec 30 22:26:51 2012 -0500
+
+    clean up, added broken tracing system.
+
+commit c99f4e7f676f2b55d54aa701683de0479c2e1c97
+Author: BRIAN PATRICK FLOERSCH <bpf4935@hendrix.cs.rit.edu>
+Date:   Sun Dec 30 21:46:48 2012 -0500
+
+    fixed bug :)
+
+commit da1473649c043e4c8333b6c22132e383ccdc39d5
+Author: BRIAN PATRICK FLOERSCH <bpf4935@hendrix.cs.rit.edu>
+Date:   Sun Dec 30 21:14:49 2012 -0500
+
+    bad error, fixed bugs, compiles
+
+commit 5df1ef6984077cd39c398090723d5397425f2a98
+Author: BRIAN PATRICK FLOERSCH <bpf4935@hendrix.cs.rit.edu>
+Date:   Sun Dec 30 17:13:36 2012 -0500
+
+    implemented most things, ready for first test
+
+commit 37dfa0d294c9654006f313811261daee495cc5de
+Author: BRIAN PATRICK FLOERSCH <bpf4935@hendrix.cs.rit.edu>
+Date:   Sun Dec 30 16:24:20 2012 -0500
+
+    added virtual funtions, ready to start subclasses
+
+commit b0ec3576bc676ffba4dfac1f616c5f49c4e425ce
+Author: BRIAN PATRICK FLOERSCH <bpf4935@hendrix.cs.rit.edu>
+Date:   Sun Dec 30 16:05:35 2012 -0500
+
+    implemented solver
+
+commit 7310a9a4eb582d34c2969f25c89acd150279b04f
+Author: BRIAN PATRICK FLOERSCH <bpf4935@hendrix.cs.rit.edu>
+Date:   Sun Dec 30 15:11:16 2012 -0500
+
+    initial commit

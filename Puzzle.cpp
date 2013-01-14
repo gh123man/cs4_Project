@@ -54,5 +54,7 @@ void Puzzle::printTrace(Configuration *c) {
     }
 }
 
+Puzzle::~Puzzle(){}
+
 
 

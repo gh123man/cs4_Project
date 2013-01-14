@@ -43,6 +43,9 @@ class Configuration {
         virtual void print() = 0;
         
         
+        ~Configuration();
+        
+        
         
 };
 

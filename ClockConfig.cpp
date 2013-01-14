@@ -57,6 +57,8 @@ int ClockConfig::getGoal() {
     return goal;
 }
 
+ClockConfig::~ClockConfig(){}
+
 
 
 

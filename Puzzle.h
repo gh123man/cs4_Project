@@ -43,6 +43,8 @@ class Puzzle {
 	    // @Arugments: c - a generic configuration pointer
         virtual  vector<Configuration*> successors(Configuration *c) = 0;
         
+        ~Puzzle();
+        
 
 };
 

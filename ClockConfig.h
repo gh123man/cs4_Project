@@ -71,6 +71,8 @@ class ClockConfig: public Configuration {
 	    //
 	    // @Description: returns the goal time
         int getGoal();
+        
+        ~ClockConfig();
     
 
 };

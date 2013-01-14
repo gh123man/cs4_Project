@@ -35,6 +35,8 @@ vector<Configuration*> Clock::successors(Configuration *c) {
 }
 
 
+Clock::~Clock(){}
+
 
 
 

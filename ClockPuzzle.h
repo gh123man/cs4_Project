@@ -23,6 +23,8 @@ class Clock: public Puzzle {
 	    //
 	    // @Arugments: c - a generic configuration
         vector<Configuration*> successors(Configuration *c);
+        
+        ~Clock();
     
 
 };

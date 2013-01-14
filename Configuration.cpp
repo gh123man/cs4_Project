@@ -10,3 +10,6 @@ Configuration *Configuration::getParent() {
     return parent;
 
 }
+
+
+Configuration::~Configuration(){}
